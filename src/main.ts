@@ -78,15 +78,15 @@ function checkGameOver()
         //get bird position
         let birdPos = parseInt(window.getComputedStyle(bird).getPropertyValue("left"))
 
-        //detect cactus collision
-
-        //if dino
+        //detect cactus and bird collision on dino
         if((dinoPos >= 150 && Math.abs(cactusPos) < 7) || (dinoPos <= 55 && Math.abs(birdPos) < 11))
         {
             endGame();
         }
     }
 }
+
+//function(check)
 
 function endGame(){
     console.log("player died!")
