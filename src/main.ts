@@ -7,14 +7,14 @@ const cactus = document.getElementById("cactus")
 const bird = document.getElementById("bird")
 
 const scoreText = document.getElementById("scoreText")
-let score = 0
+let score:number = 0
 setText("click to start!")
 
 
-var isJumping = false
-let gameOver = true
+let isJumping:boolean = false
+let gameOver:boolean = true
 
-document.addEventListener('click', () => jump())
+document.addEventListener('click', jump)
 
 
 setInterval(function () { Main()}, 10)
@@ -27,20 +27,20 @@ function Main()
         setText("Score: " + score)
 
         checkGameOver()
+        //return;
     }
 }
 
 
 function jump()
 {
-    if(gameOver === false)
+    if(gameOver === false && isJumping == false)
     {
-        if(isJumping == false)
-        {
+        
             isJumping = true
             dino?.classList.add("jump")
             setTimeout(removeJump, 500)
-        }
+        
     }
     else
     {
